@@ -6,36 +6,67 @@
     <title>Navmenu</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 40px;
-}
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 40px;
+        }
 
-ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-    background-color: #fff;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+        #menu-toggle {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
 
-li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
 
-li a:hover {
-    color: #007BFF;
-}
+        li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
+        li a:hover {
+            color: #007BFF;
+        }
+
+        @media (max-width: 600px) {
+            #menu-toggle {
+                display: block;
+            }
+
+            ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            ul.show {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
+    <button id="menu-toggle" aria-label="Menu">
+        ☰
+    </button>
+
+    <nav id="nav-menu">
+    </nav>
+
     <script src="menu.js"></script>
 </body>
 </html>

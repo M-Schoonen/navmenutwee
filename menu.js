@@ -13,3 +13,8 @@ menuItems.forEach(item => {
 });
 
 document.body.appendChild(ul);
+
+const toggleButton = document.getElementById('menu-toggle');
+toggleButton.addEventListener('click', () => {
+    ul.classList.toggle('show');
+});
